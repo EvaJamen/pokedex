@@ -3,6 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Pokedex</title>
-</headR
+    <link rel="stylesheet" href="{{ global.request.basepath }}/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ global.request.basepath }}/assets/css/main.css">
+</head>
 <body>
-    HEADER
+    <div class="container">
+    
+   <header class="navbar navbar-inverse bg-inverse mb-4">
+    <nav class="nav">
+        <a href="{{url('home')}}" class="navbar-brand" href="{{ url('home') }}">Pokedex</a>        
+        <a href="{{url('home')}}" class="nav-item nav-link text-white" href="{{ url('home') }}">Home</a>
+        <a href="{{url('pokemons')}}" class="nav-item nav-link text-white" href="{{ url('pokemons') }}">Pokemons</a>
+        <a href="{{url('add')}}" class="nav-item nav-link text-white" href="{{ url('add') }}">Add</a>
+    </nav>
+   </header>
