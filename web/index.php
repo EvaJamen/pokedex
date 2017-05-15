@@ -16,22 +16,22 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array(
 $app
     ->get('/', function() use ($app)
     {
-        return 'Home!';
+        return $app['twig']->render('pages/home.twig');
     })
     ->bind('home');
 
 $app
     ->get('/pokemons', function() use ($app)
     {
-        return 'Pokemons!';
+        return $app['twig']->render('pages/pokemons.twig');
     })
     ->bind('pokemons');
 
-//faire attention à l'id dans l'URL
+// ATTENTION A L'ID DANS L'URL
 $app
     ->get('/pokemon/{id}', function($id) use ($app)
     {
-        return 'Pokemon: '.$id.'!';
+        return $app['twig']->render('pages/pokemon.twig');
     })
     ->assert('id', '\d+')
     ->bind('pokemon');
@@ -39,9 +39,9 @@ $app
 $app
     ->get('/add', function() use ($app)
     {
-        return 'Add!';
+        return $app['twig']->render('pages/add.twig');
     })
     ->bind('add');
 
-// Run Silex - Toujours à la fin
+// Run Silex - TOUJOURS A LA FIN
 $app->run();
